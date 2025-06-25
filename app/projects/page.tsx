@@ -139,18 +139,53 @@ export default function ProjectsPage() {
                     </div>
 
                     <div className="flex gap-2 pt-2">
-                      <Button size="sm" asChild>
-                        <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-1" />
-                          Live Demo
-                        </Link>
+                      <Button
+                        size="sm"
+                        asChild
+                        variant="outline"
+                        disabled={!project.githubUrl || project.githubUrl === "#"}
+                      >
+                        {(!project.githubUrl || project.githubUrl === "#") ? (
+                          <span className="flex items-center opacity-50 cursor-not-allowed">
+                            <Github className="h-4 w-4 mr-1" />
+                            Code
+                          </span>
+                        ) : (
+                          <Link
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center"
+                          >
+                            <Github className="h-4 w-4 mr-1" />
+                            Code
+                          </Link>
+                        )}
                       </Button>
-                      <Button active={!!project.githubUrl && project.githubUrl !== "#"} size="sm" variant="outline" asChild>
-                        <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-1" />
-                          Code
-                        </Link>
+                      
+                      <Button
+                        size="sm"
+                        asChild
+                        disabled={!project.liveUrl || project.liveUrl === "#"}
+                      >
+                        {(!project.liveUrl || project.liveUrl === "#") ? (
+                          <span className="flex items-center opacity-50 cursor-not-allowed">
+                            <ExternalLink className="h-4 w-4 mr-1" />
+                            Live Demo
+                          </span>
+                        ) : (
+                          <Link
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-1" />
+                            Live Demo
+                          </Link>
+                        )}
                       </Button>
+
                     </div>
                   </div>
                 </CardContent>
