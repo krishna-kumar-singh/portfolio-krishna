@@ -102,7 +102,7 @@ export default function ProjectsPage() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader>
