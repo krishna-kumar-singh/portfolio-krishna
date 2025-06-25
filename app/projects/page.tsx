@@ -58,7 +58,7 @@ const projects = [
   {
     title: 'SOSE Lajpat Nagar – Official School Website',
     description: 'Developed the official website for Dr. B.R. Ambedkar SOSE, Lajpat Nagar.',
-    image: 'https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://soselajpatnagar.in/logo.png',
     tags: ['Next.js 14', 'Shadcn', 'PostgreSQL', 'Admin Dashboard'],
     features: [
       'Daily events & contact form',
