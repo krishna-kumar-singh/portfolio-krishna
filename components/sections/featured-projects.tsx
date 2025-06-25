@@ -27,7 +27,7 @@ const featuredProjects = [
   {
     title: 'SOSE School Website',
     description: 'Official school website with admin dashboard and dynamic content management.',
-    image: 'https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://soselajpatnagar.in/logo.png',
     tags: ['Next.js', 'PostgreSQL', 'Admin Dashboard'],
     liveUrl: 'https://soselajpatnagar.in',
     githubUrl: '#',
@@ -67,7 +67,7 @@ export function FeaturedProjects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object- hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader>
