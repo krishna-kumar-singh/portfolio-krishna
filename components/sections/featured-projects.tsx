@@ -14,7 +14,7 @@ const featuredProjects = [
     image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800',
     tags: ['Next.js', 'MongoDB', 'NextAuth', 'AI Integration'],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/krishna-kumar-singh/Anonymous-Feedback-App',
   },
   {
     title: 'SP Architects Website',
