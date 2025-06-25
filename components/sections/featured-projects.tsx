@@ -86,17 +86,32 @@ export function FeaturedProjects() {
                   </div>
                   <div className="flex gap-2">
                     <Button size="sm" asChild>
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    {project.liveUrl && project.liveUrl !== "#" ? (
+                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer"     className="flex items-center">
                         <ExternalLink className="h-4 w-4 mr-1" />
                         Live Demo
                       </Link>
-                    </Button>
-                    <Button size="sm" variant="outline" asChild>
-                      <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    ) : (
+                      <span className="flex items-center opacity-50 cursor-not-allowed">
+                        <ExternalLink className="h-4 w-4 mr-1" />
+                        Live Demo
+                      </span>
+                    )}
+                  </Button>
+                  
+                  <Button size="sm" variant="outline" asChild>
+                    {project.githubUrl && project.githubUrl !== "#" ? (
+                      <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
                         <Github className="h-4 w-4 mr-1" />
                         Code
                       </Link>
-                    </Button>
+                    ) : (
+                      <span className="flex items-center opacity-50 cursor-not-allowed">
+                        <Github className="h-4 w-4 mr-1" />
+                        Code
+                      </span>
+                    )}
+                  </Button>
                   </div>
                 </CardContent>
               </Card>
