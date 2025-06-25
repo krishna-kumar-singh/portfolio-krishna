@@ -145,7 +145,7 @@ export default function ProjectsPage() {
                           Live Demo
                         </Link>
                       </Button>
-                      <Button size="sm" variant="outline" asChild>
+                      <Button active={!!project.githubUrl && project.githubUrl !== "#"} size="sm" variant="outline" asChild>
                         <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="h-4 w-4 mr-1" />
                           Code
