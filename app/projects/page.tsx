@@ -22,7 +22,7 @@ const projects = [
       'Fully responsive and production-ready'
     ],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/krishna-kumar-singh/Anonymous-Feedback-App',
     category: 'Web Application',
   },
   {
