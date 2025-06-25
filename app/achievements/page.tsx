@@ -21,7 +21,7 @@ const achievements = [
     description: 'Selected as one of the top 200 startup ideas in Vivo Ignite 3rd Edition from a pool of 37,000 participants nationwide.',
     icon: Star,
     color: 'bg-purple-500/10 text-purple-600',
-    date: '2024',
+    date: '2024-2025',
     type: 'Startup Competition',
   },
   {
@@ -30,7 +30,7 @@ const achievements = [
     description: 'Founded and developed Fodenge, a bite-sized AI-based learning platform specifically designed for JEE aspirants.',
     icon: Zap,
     color: 'bg-blue-500/10 text-blue-600',
-    date: '2024',
+    date: '2025',
     type: 'Entrepreneurship',
   },
   {
@@ -57,7 +57,7 @@ const achievements = [
     description: 'Mastered React, Next.js, AI workflows, database design, and modern development practices through self-directed learning.',
     icon: Target,
     color: 'bg-red-500/10 text-red-600',
-    date: '2022-24',
+    date: '2023-24',
     type: 'Learning Achievement',
   },
 ];
