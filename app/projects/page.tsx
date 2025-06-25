@@ -43,7 +43,7 @@ const projects = [
   {
     title: 'Addict Chokers – Shopify E-commerce',
     description: 'Built a custom Shopify store for a niche jewelry brand with a dark theme and conversion-driven layout.',
-    image: 'https://drive.google.com/file/d/1DohKA8s6RW6Xsk2k9lKA8D4pZ4ft6v-a/view?usp=sharing',
+    image: 'https://asset.cloudinary.com/duedvfcd9/7e5bb6bab382b2b075f4cdb6ff5728a3',
     tags: ['Shopify', 'Liquid', 'CSS', 'JavaScript', 'Payment Integration'],
     features: [
       'Clean navigation and responsive layout',
