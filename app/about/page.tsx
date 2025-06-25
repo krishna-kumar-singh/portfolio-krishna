@@ -114,8 +114,8 @@ export default function AboutPage() {
                     </div>
                     <ul className="text-sm space-y-2">
                       <li>• Building AI-powered applications</li>
-                      <li>• Exploring Next.js 14 features</li>
                       <li>• Developing Fodenge platform</li>
+                      <li>• Developing Last Period</li>
                       <li>• Contributing to open source</li>
                     </ul>
                   </CardContent>
