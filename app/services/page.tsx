@@ -20,7 +20,7 @@ const services = [
       'API Development & Integration',
       'Responsive Design & Performance Optimization'
     ],
-    technologies: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Tailwind CSS'],
+    technologies: ['Next.js', 'React', 'TypeScript',"AI Integration" ,'PostgreSQL', 'MongoDB', 'Tailwind CSS', 'Shadcn UI'],
     color: 'bg-blue-500/10 text-blue-500',
   },
   {
