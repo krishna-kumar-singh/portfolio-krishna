@@ -12,7 +12,7 @@ const projects = [
     title: 'Anonymous Feedback App',
     description: 'Built with Next.js 14, TypeScript, and MongoDB, this app enables users to send anonymous messages with secure login and intuitive UX.',
     image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['Next.js', 'Tailwind', 'Shadcn', 'MongoDB', 'Resend', 'NextAuth', 'JWT', 'Bcrypt'],
+    tags: ['Next.js', 'Tailwind', 'Shadcn', 'MongoDB',"AI Integration" ,'Resend', 'NextAuth', 'JWT', 'Bcrypt'],
     features: [
       'Anonymous messaging',
       'Dashboard with feedback analytics',
