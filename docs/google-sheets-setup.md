@@ -1,6 +1,6 @@
 # Google Sheets Form Submission Setup Guide
 
-This guide will help you set up the Google Sheets integration for the contact form on Krishna Kumar Singh's portfolio website.
+This guide will help you set up the Google Sheets integration with enhanced email system for the contact form on Krishna Kumar Singh's portfolio website.
 
 ## Step 1: Create a Google Spreadsheet
 
@@ -17,7 +17,8 @@ This guide will help you set up the Google Sheets integration for the contact fo
 2. Click "New Project"
 3. Replace the default `Code.gs` content with the code from `lib/google-apps-script.js`
 4. Replace `YOUR_SPREADSHEET_ID` with your actual spreadsheet ID
-5. Save the project with a name like "Portfolio Contact Form Handler"
+5. Update the `WEBSITE_URL` constant with your actual domain
+6. Save the project with a name like "Portfolio Contact Form Handler"
 
 ## Step 3: Deploy the Script
 
@@ -32,8 +33,8 @@ This guide will help you set up the Google Sheets integration for the contact fo
 ## Step 4: Update the Contact Form
 
 1. Open `app/contact/page.tsx`
-2. Find the line with `const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';`
-3. Replace `YOUR_SCRIPT_ID` with your actual script ID from the Web App URL
+2. Find the line with `const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL ||`
+3. Replace the fallback URL with your actual Web App URL
 
 ## Step 5: Test the Integration
 
@@ -41,6 +42,24 @@ This guide will help you set up the Google Sheets integration for the contact fo
 2. Navigate to the contact page
 3. Fill out and submit the form
 4. Check your Google Spreadsheet to see if the data appears
+5. Check both email addresses for the confirmation and notification emails
+
+## Enhanced Email System Features
+
+### ✅ Confirmation Email (Sent to Form Submitter)
+- **Professional Design**: Beautiful HTML email with your branding
+- **Submission Summary**: Complete details of what they submitted
+- **Clear Expectations**: Response time and next steps
+- **Personal Touch**: Information about you and your services
+- **Social Links**: Easy access to your GitHub, LinkedIn, and Twitter
+- **Mobile Responsive**: Looks great on all devices
+
+### ✅ Notification Email (Sent to You)
+- **Instant Alerts**: Immediate notification of new submissions
+- **Action-Oriented**: Clear call-to-action to respond quickly
+- **Complete Information**: All contact details and message content
+- **Professional Formatting**: Easy to read and process
+- **Quick Stats**: Submission ID and tracking information
 
 ## Spreadsheet Structure
 
@@ -54,68 +73,112 @@ The spreadsheet will automatically be set up with the following columns:
 | Phone | Contact's phone number |
 | Message | The message content |
 | Status | Submission status (New/Reviewed/Responded) |
+| Response Sent | Whether you've responded (Yes/No) |
 
-## Features Included
+## Email Templates
 
-### ✅ Automatic Data Collection
-- All form submissions are automatically saved to Google Sheets
-- Timestamps are added for each submission
-- Data is properly formatted and organized
+### Confirmation Email Features:
+- **Personalized Greeting**: Uses the submitter's name
+- **Submission Confirmation**: Confirms successful receipt
+- **Response Timeline**: Sets expectation of 24-hour response
+- **Your Information**: Brief bio and specializations
+- **Social Media Links**: GitHub, LinkedIn, Twitter
+- **Professional Signature**: Complete contact information
+- **Responsive Design**: Works on desktop and mobile
 
-### ✅ Email Notifications
-- You'll receive an email notification for each new submission
-- Emails include all form details and submission time
+### Notification Email Features:
+- **Urgent Styling**: Eye-catching design to grab attention
+- **Contact Information**: Clickable email and phone links
+- **Message Preview**: Full message content in readable format
+- **Action Reminders**: Prompts for timely response
+- **Tracking Information**: Unique submission ID
+- **Professional Layout**: Clean, organized information
 
-### ✅ Error Handling
-- Robust error handling for failed submissions
-- User-friendly error messages
-- Fallback options for users
+## Testing Functions
 
-### ✅ Data Validation
-- Form validation on the frontend
-- Server-side data processing
-- Spam protection through form validation
+The script includes several test functions you can run:
 
-### ✅ Professional Formatting
-- Clean spreadsheet layout with headers
-- Alternating row colors for readability
-- Auto-resized columns
-- Frozen header row
+### Test Complete Form Submission:
+```javascript
+testFormSubmission()
+```
 
-## Security Considerations
+### Test Confirmation Email Only:
+```javascript
+testConfirmationEmail()
+```
 
-1. **Access Control**: The script is set to "Anyone" access, but it only accepts POST requests with form data
-2. **Data Validation**: All form inputs are validated before processing
-3. **Error Logging**: Errors are logged for debugging without exposing sensitive information
-4. **Email Privacy**: Email notifications are sent only to your specified address
+### Test Notification Email Only:
+```javascript
+testNotificationEmail()
+```
+
+### Set Up Spreadsheet Formatting:
+```javascript
+setupSpreadsheet()
+```
+
+## Security & Privacy
+
+1. **Data Protection**: All form data is securely stored in your Google Spreadsheet
+2. **Email Privacy**: Confirmation emails are sent from your Google account
+3. **Access Control**: Only you have access to the spreadsheet and script
+4. **No Data Sharing**: No third-party services involved in data processing
 
 ## Troubleshooting
 
 ### Common Issues:
 
-1. **Form not submitting**: Check that the Web App URL is correct in the contact form
-2. **No data in spreadsheet**: Verify the spreadsheet ID in the Apps Script
-3. **No email notifications**: Check your Gmail spam folder and verify the recipient email
-4. **Permission errors**: Ensure the script has proper permissions to access your spreadsheet
+1. **Emails not sending**: 
+   - Check Gmail quota limits (100 emails/day for personal accounts)
+   - Verify email addresses are correct
+   - Check spam folders
 
-### Testing the Setup:
+2. **Confirmation email not received**:
+   - Verify the submitter's email address is valid
+   - Check their spam/junk folder
+   - Test with your own email address
 
-You can test the Google Apps Script directly:
-1. In the Apps Script editor, run the `testFormSubmission()` function
-2. Check the execution log for any errors
-3. Verify that test data appears in your spreadsheet
+3. **HTML not rendering**:
+   - Some email clients block HTML by default
+   - Plain text version is automatically included as fallback
+
+4. **Script permissions**:
+   - Ensure the script has permission to send emails
+   - Re-authorize if needed in Google Apps Script
+
+### Email Delivery Best Practices:
+
+1. **Avoid Spam Filters**:
+   - Professional subject lines
+   - Balanced text-to-image ratio
+   - No excessive capitalization or exclamation marks
+
+2. **Mobile Optimization**:
+   - Responsive HTML design
+   - Readable font sizes
+   - Touch-friendly buttons
+
+3. **Professional Appearance**:
+   - Consistent branding
+   - Clean layout
+   - Professional language
 
 ## Maintenance
 
-- Regularly check the spreadsheet for new submissions
-- Update the "Status" column to track your response progress
-- Consider archiving old submissions periodically
-- Monitor the Apps Script execution logs for any issues
+- **Monitor Email Delivery**: Check for bounced emails regularly
+- **Update Contact Information**: Keep your details current in the script
+- **Review Submissions**: Regularly check the spreadsheet for new entries
+- **Response Tracking**: Update the "Response Sent" column after replying
+- **Archive Old Data**: Consider archiving submissions older than 6 months
 
 ## Support
 
-If you encounter any issues with the setup, you can:
+If you encounter any issues:
 1. Check the Google Apps Script execution logs
-2. Verify all IDs and URLs are correctly configured
-3. Test the form submission process step by step
-4. Contact Google Apps Script support for platform-specific issues
+2. Test individual email functions
+3. Verify all configuration settings
+4. Check Google Workspace/Gmail settings
+5. Review email delivery reports in Gmail
+
+The enhanced email system provides a professional experience for both you and your potential clients, ensuring no opportunities are missed and all inquiries are handled promptly and professionally.
