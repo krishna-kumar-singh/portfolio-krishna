@@ -423,9 +423,9 @@ export default function ContactPage() {
                       key={item.label}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.8 + index * 0.1 }}
+                      transition={{ delay: 0.8 + index * 0.1 ,type: "spring", stiffness: 400 }}
                       whileHover={{ scale: 1.02, x: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
+                
                     >
                       <Link
                         href={item.href}
