@@ -24,7 +24,7 @@ const projects = [
       'Real-time username availability check',
       'Fully responsive and production-ready'
     ],
-    liveUrl: '#',
+    liveUrl: 'https://anonymous-feedback-app-fawn.vercel.app/',
     githubUrl: 'https://github.com/krishna-kumar-singh/Anonymous-Feedback-App',
     category: 'Web Application',
   },

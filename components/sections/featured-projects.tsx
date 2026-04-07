@@ -14,7 +14,7 @@ const featuredProjects = [
     description: 'Secure anonymous messaging platform with AI-powered suggestions and real-time analytics.',
     image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800',
     tags: ['Next.js', 'MongoDB', 'NextAuth', 'AI Integration'],
-    liveUrl: '#',
+    liveUrl: 'https://anonymous-feedback-app-fawn.vercel.app/',
     githubUrl: 'https://github.com/krishna-kumar-singh/Anonymous-Feedback-App',
   },
   {
